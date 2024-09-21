@@ -11,7 +11,10 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4  # Ensure you're using the latest version
+        uses: actions/checkout@v4  # Use the latest version
+
+      - name: Create build directory
+        run: mkdir -p dist  # Ensure the directory exists
 
       - name: Generate Snake GIF and SVG
         uses: Platane/snk@master
@@ -25,22 +28,16 @@ jobs:
         run: git status
 
       - name: Push changes
-        uses: ad-m/github-push-action@master  # Confirm this action is up-to-date
+        uses: ad-m/github-push-action@master  # Ensure this is up-to-date
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch:  ${{ github.ref }}
+          branch: ${{ github.ref }}  # Use the current ref
           force: true
 
       - name: Deploy to GitHub Pages
-        # uses: crazy-max/ghaction-github-pages@v4  # Ensure this is the latest version
-        # with:
-        #   target_branch: output
-        #   build_dir: dist
-        # env:
-        #   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        uses: crazy-max/ghaction-github-pages@v4
+        uses: crazy-max/ghaction-github-pages@v4  # Ensure this is the latest version
         with:
-          target_branch: gh-pages
-          build_dir: public
+          target_branch: gh-pages  # Specify the target branch for deployment
+          build_dir: dist  # Adjusted to match the output directory
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
