@@ -11,7 +11,7 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3  # Ensure you're using the latest version
+        uses: actions/checkout@v4  # Ensure you're using the latest version
 
       - name: Generate Snake GIF and SVG
         uses: Platane/snk@master
@@ -25,14 +25,14 @@ jobs:
         run: git status
 
       - name: Push changes
-        uses: ad-m/github-push-action@master
+        uses: ad-m/github-push-action@master  # Confirm this action is up-to-date
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: master
           force: true
 
       - name: Deploy to GitHub Pages
-        uses: crazy-max/ghaction-github-pages@v3.0.0  # Check for an updated version
+        uses: crazy-max/ghaction-github-pages@v3.0.0  # Ensure this is the latest version
         with:
           target_branch: output
           build_dir: dist
