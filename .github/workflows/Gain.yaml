@@ -32,7 +32,7 @@ jobs:
           force: true
 
       - name: Deploy to GitHub Pages
-        uses: crazy-max/ghaction-github-pages@v3.0.0  # Ensure this is the latest version
+        uses: crazy-max/ghaction-github-pages@v4  # Ensure this is the latest version
         with:
           target_branch: output
           build_dir: dist
