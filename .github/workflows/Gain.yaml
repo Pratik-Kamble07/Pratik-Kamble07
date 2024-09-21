@@ -28,7 +28,7 @@ jobs:
         uses: ad-m/github-push-action@master  # Confirm this action is up-to-date
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: master
+          branch:  ${{ github.ref }}
           force: true
 
       - name: Deploy to GitHub Pages
