@@ -17,7 +17,7 @@ jobs:
         run: mkdir -p dist
 
       - name: Generate Snake GIF and SVG
-        uses: Platane/snk@latest  # Check if there's a more recent version
+        uses: Platane/snk@v3  # Check if there's a more recent version
         id: snake-gif
         with:
           github_user_name: Pratik-Kamble07
