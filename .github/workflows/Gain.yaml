@@ -28,14 +28,14 @@ jobs:
         run: git status
 
       - name: Push changes
-        uses: ad-m/github-push-action@latest  # Use the latest version
+        uses: ad-m/github-push-action@master  # Use the latest version
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: ${{ github.ref }}
           force: true
 
       - name: Deploy to GitHub Pages
-        uses: crazy-max/ghaction-github-pages@latest  # Use the latest version
+        uses: crazy-max/ghaction-github-pages@v4  # Use the latest version
         with:
           target_branch: gh-pages
           build_dir: dist
