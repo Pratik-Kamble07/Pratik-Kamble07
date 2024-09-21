@@ -23,3 +23,4 @@
 
 <p><img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=pratik-kamble07&" alt="pratik-kamble07" /></p>
 
+![snake gif](https://github.com/Pratik-Kamble07/Pratik-Kamble07/blob/output/github-contribution-grid-snake.svg)
